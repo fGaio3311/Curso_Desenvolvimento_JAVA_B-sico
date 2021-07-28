@@ -1,4 +1,4 @@
-package br.com.globalabs.exemplomaven;
+package br.com.globallabs.exemplomaven;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

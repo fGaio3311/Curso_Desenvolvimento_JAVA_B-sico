@@ -1,4 +1,4 @@
-package br.com.globalabs.exemplomaven;
+package br.com.globallabs.exemplomaven;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
