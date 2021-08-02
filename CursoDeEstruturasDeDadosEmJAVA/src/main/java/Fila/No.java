@@ -1,15 +1,11 @@
-package Pilha;
+package Fila;
 
 public class No<T> {
-    private T conteudo;
-    private No proximoNo;
+    public T conteudo;
+    public No proximoNo;
 
     public No(T conteudo) {
         this.conteudo = conteudo;
-    }
-
-    public No getProximoNo() {
-        return proximoNo;
     }
 
     public T getConteudo() {
@@ -18,6 +14,10 @@ public class No<T> {
 
     public void setConteudo(T conteudo) {
         this.conteudo = conteudo;
+    }
+
+    public No getProximoNo() {
+        return proximoNo;
     }
 
     public void setProximoNo(No proximoNo) {

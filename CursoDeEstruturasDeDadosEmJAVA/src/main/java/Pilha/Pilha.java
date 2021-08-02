@@ -3,6 +3,10 @@ package Pilha;
 public class Pilha {
     private No topo;
 
+    public Pilha() {
+        this.topo = null;
+    }
+
     public No top() {
         return this.topo;
     }
@@ -28,5 +32,27 @@ public class Pilha {
 
     public boolean isEmpty() {
         return topo == null;
+    }
+
+    @Override
+    public String toString() {
+        String stringRetorno = "-----------------------\n";
+        stringRetorno += "             Pilha\n";
+        stringRetorno += "-----------------------\n";
+
+        No noAuxiliar = topo;
+
+        while(true) {
+            if(noAuxiliar != null) {
+                stringRetorno += "[No{ dado = " + noAuxiliar.getConteudo()+ "}]\n";
+                noAuxiliar = noAuxiliar.getProximoNo();
+            } else {
+                break;
+            }
+        }
+
+        stringRetorno += "-----------------------\n";
+
+        return stringRetorno;
     }
 }
