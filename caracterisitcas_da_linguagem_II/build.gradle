@@ -16,19 +16,6 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
-checkstyle {
-    toolVersion = '8.21'
-    showViolations = true
-    configFile = file("config/checkstyle/checkstyle.xml")
-}
-
-pmd {
-    ruleSetFiles = files("config/pmd/ruleset.xml")
-    tooleVersion = '6.15.0'
-    ignoreFailures = true
-    consoleOutput = true
-}
-
 test {
     useJUnitPlatform()
 }
