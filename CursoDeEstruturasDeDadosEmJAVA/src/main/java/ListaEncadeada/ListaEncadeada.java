@@ -26,23 +26,23 @@ public class ListaEncadeada<T> {
         return this.lista;
     }
 
-    public void add(No novoNo) {
+    public void add(T conteudo) {
+        No novoNo = new No<T>(conteudo);
         No noAuxiliar;
+
         if (lista != null) {
             for (noAuxiliar = lista;
                  noAuxiliar.getProximoNo() != null;
                  noAuxiliar = noAuxiliar.getProximoNo()) {}
 
             noAuxiliar.setProximoNo(novoNo);
-            novoNo.setProximoNo(null);
 
         }else {
             lista = novoNo;
-            lista.setProximoNo(null);
         }
     }
 
-    public void remove(No removido) {
+    public T remove(No removido) {
         No noAuxiliar;
         No noAnterior;
         if (lista != null) {
@@ -57,6 +57,8 @@ public class ListaEncadeada<T> {
                 }
             }
         }
+
+        return (T) removido.getConteudo();
     }
 
     public No<T> getNo(int index) {
@@ -64,7 +66,7 @@ public class ListaEncadeada<T> {
         No<T> noAuxiliar = lista;
         No<T> noRetorno = null;
 
-        for(int i = 0 ; i < this.size() - 1; i++) {
+        for(int i = 0 ; i <= index; i++) {
             noRetorno = noAuxiliar;
             noAuxiliar = noAuxiliar.getProximoNo();
         }
@@ -107,8 +109,13 @@ public class ListaEncadeada<T> {
         str += "        Lista encadeada       \n";
         str += "------------------------------\n";
 
+        No<T> noAuxiliar = lista;
 
-
+        for( int i = 0 ; i < this.size() ; i++ ) {
+            str += "[No{conteudo="+noAuxiliar.getConteudo() + "}]----->";
+            noAuxiliar = noAuxiliar.getProximoNo();
+        }
+        str += "null";
         return str;
     }
 

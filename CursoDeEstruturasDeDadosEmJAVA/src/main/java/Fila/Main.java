@@ -13,8 +13,8 @@ public class Main {
         minhaFila.enqueue(new No("No 7"));
 
         System.out.println(minhaFila.toString());
-
-        System.out.println(minhaFila.dequeue());
+//
+//        System.out.println(minhaFila.dequeue());
 
         System.out.println(minhaFila.toString());
     }
